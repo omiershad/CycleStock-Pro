@@ -42,8 +42,10 @@ public class AddOutsourcedPartController {
         theModel.addAttribute("outsourcedpart",part);
         if(bindingResult.hasErrors()){
             return "OutsourcedPartForm";
-        }
-        else{
+        } else if (!part.isInventoryValid()) {
+            bindingResult.rejectValue("inv", "InvalidInventory", "Inventory is outside the valid range.");
+            return "OutsourcedPartForm";
+        } else {
         OutsourcedPartService repo=context.getBean(OutsourcedPartServiceImpl.class);
         OutsourcedPart op=repo.findById((int)part.getId());
         if(op!=null)part.setProducts(op.getProducts());

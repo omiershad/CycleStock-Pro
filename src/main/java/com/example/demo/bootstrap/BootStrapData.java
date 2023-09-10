@@ -51,6 +51,8 @@ public class BootStrapData implements CommandLineRunner {
         o1.setCompanyName("Bakery Inc");
         o1.setName("Bun");
         o1.setInv(2);
+        o1.setMin(0);
+        o1.setMax(10);
         o1.setPrice(3);
         o1.setId(1L);
         outsourcedPartRepository.save(o1);
@@ -60,6 +62,8 @@ public class BootStrapData implements CommandLineRunner {
         o2.setCompanyName("Meat Company");
         o2.setName("Patty");
         o2.setInv(2);
+        o2.setMin(0);
+        o2.setMax(10);
         o2.setPrice(3);
         o2.setId(2L);
         outsourcedPartRepository.save(o2);
@@ -69,6 +73,8 @@ public class BootStrapData implements CommandLineRunner {
         o3.setCompanyName("Dairy Farmers");
         o3.setName("Cheese");
         o3.setInv(2);
+        o3.setMin(0);
+        o3.setMax(10);
         o3.setPrice(3);
         o3.setId(3L);
         outsourcedPartRepository.save(o3);
@@ -78,6 +84,8 @@ public class BootStrapData implements CommandLineRunner {
         o4.setCompanyName("Produce Inc");
         o4.setName("Toppings");
         o4.setInv(2);
+        o4.setMin(0);
+        o4.setMax(10);
         o4.setPrice(3);
         o4.setId(4L);
         outsourcedPartRepository.save(o4);
@@ -87,6 +95,8 @@ public class BootStrapData implements CommandLineRunner {
         o5.setCompanyName("Sauces & Spreads");
         o5.setName("Sauce");
         o5.setInv(2);
+        o5.setMin(0);
+        o5.setMax(10);
         o5.setPrice(3);
         o5.setId(5L);
         outsourcedPartRepository.save(o5);

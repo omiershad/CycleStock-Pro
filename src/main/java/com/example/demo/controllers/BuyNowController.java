@@ -18,7 +18,7 @@ public class BuyNowController {
     }
 
 
-@PostMapping("/buyProduct")
+    @PostMapping("/buyProduct")
     public String buyProduct(@RequestParam("productId") Long productId) {
         Optional<Product> optionalProduct = productRepository.findById(productId);
 
@@ -38,17 +38,17 @@ public class BuyNowController {
         } else {
             return "redirect:/purchaseError";
         }
-}
+    }
 
-@GetMapping("/purchaseSuccess")
+    @GetMapping("/purchaseSuccess")
     public String displayPurchaseSuccess() {
         return "purchaseSuccess";
-}
+    }
 
-@GetMapping(".purchaseError")
+    @GetMapping(".purchaseError")
     public String displayPurchaseError() {
         return "purchaseError";
-}
+    }
 
 
 

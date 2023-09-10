@@ -168,4 +168,27 @@ public class AddProductController {
         theModel.addAttribute("availparts",availParts);
         return "productForm";
     }
+
+    @PostMapping("/buyProduct")
+    public String buyProduct(@RequestParam("productId") Long productId) {
+        Optional<Product> optionalProduct = productRepository.findById(productId);
+
+        if (optionalProduct.isPresent()) {
+            Product product = optionalProduct.get();
+
+            if (product.getInv() > 0) {
+
+                product.setInv(product.getInv() - 1);
+
+                productRepository.save(product);
+
+                return "redirect:/purchaseSuccess";
+            } else {
+                return "redirect:/purchaseError";
+            }
+        } else {
+            return "redirect:/purchaseError";
+        }
+    }
+
 }
