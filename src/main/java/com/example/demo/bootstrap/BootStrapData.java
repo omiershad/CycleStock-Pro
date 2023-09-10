@@ -39,33 +39,87 @@ public class BootStrapData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-       /*
-        OutsourcedPart o= new OutsourcedPart();
-        o.setCompanyName("Western Governors University");
-        o.setName("out test");
-        o.setInv(5);
-        o.setPrice(20.0);
-        o.setId(100L);
-        outsourcedPartRepository.save(o);
-        OutsourcedPart thePart=null;
+        long partsCount = partRepository.count();
+        long productsCount = productRepository.count();
+
+        if (partsCount == 0 && productsCount == 0) {
+
+        // Sample Parts
+        OutsourcedPart o1 = new OutsourcedPart();
+        o1.setCompanyName("Bakery Inc");
+        o1.setName("Bun");
+        o1.setInv(2);
+        o1.setPrice(3);
+        o1.setId(1L);
+        outsourcedPartRepository.save(o1);
+        OutsourcedPart thePart1=null;
+
+        OutsourcedPart o2 = new OutsourcedPart();
+        o2.setCompanyName("Meat Company");
+        o2.setName("Patty");
+        o2.setInv(2);
+        o2.setPrice(3);
+        o2.setId(2L);
+        outsourcedPartRepository.save(o2);
+        OutsourcedPart thePart2=null;
+
+        OutsourcedPart o3 = new OutsourcedPart();
+        o3.setCompanyName("Dairy Farmers");
+        o3.setName("Cheese");
+        o3.setInv(2);
+        o3.setPrice(3);
+        o3.setId(3L);
+        outsourcedPartRepository.save(o3);
+        OutsourcedPart thePart3=null;
+
+        OutsourcedPart o4 = new OutsourcedPart();
+        o4.setCompanyName("Produce Inc");
+        o4.setName("Toppings");
+        o4.setInv(2);
+        o4.setPrice(3);
+        o4.setId(4L);
+        outsourcedPartRepository.save(o4);
+        OutsourcedPart thePart4=null;
+
+        OutsourcedPart o5 = new OutsourcedPart();
+        o5.setCompanyName("Sauces & Spreads");
+        o5.setName("Sauce");
+        o5.setInv(2);
+        o5.setPrice(3);
+        o5.setId(5L);
+        outsourcedPartRepository.save(o5);
+        OutsourcedPart thePart5=null;
+
+
         List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
         for(OutsourcedPart part:outsourcedParts){
             if(part.getName().equals("out test"))thePart=part;
         }
 
         System.out.println(thePart.getCompanyName());
-        */
+
         List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
         for(OutsourcedPart part:outsourcedParts){
             System.out.println(part.getName()+" "+part.getCompanyName());
         }
 
-        /*
-        Product bicycle= new Product("bicycle",100.0,15);
-        Product unicycle= new Product("unicycle",100.0,15);
-        productRepository.save(bicycle);
-        productRepository.save(unicycle);
-        */
+        // Sample products
+        Product cheeseburger = new Product("Cheeseburger", 5.00, 25);
+        productRepository.save(cheeseburger);
+
+        Product hamburger = new Product("Hamburger", 4.00, 20);
+        productRepository.save(hamburger);
+
+        Product chickenSandwich = new Product("Chicken Sandwich", 4.50, 15);
+        productRepository.save(chickenSandwich);
+
+        Product veggieBurger = new Product("Veggie Burger", 4.00, 10);
+        productRepository.save(veggieBurger);
+
+        Product fishSandwich = new Product("Fish Sandwich", 5.50, 5);
+        productRepository.save(fishSandwich);
+        }
+
 
         System.out.println("Started in Bootstrap");
         System.out.println("Number of Products"+productRepository.count());
