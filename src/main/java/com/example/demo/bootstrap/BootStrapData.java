@@ -1,3 +1,5 @@
+// check sample code with CI. line 95-105, 125-129
+
 package com.example.demo.bootstrap;
 
 import com.example.demo.domain.OutsourcedPart;
@@ -90,8 +92,7 @@ public class BootStrapData implements CommandLineRunner {
         outsourcedPartRepository.save(o5);
         OutsourcedPart thePart5=null;
 
-
-        List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
+       /* List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
         for(OutsourcedPart part:outsourcedParts){
             if(part.getName().equals("out test"))thePart=part;
         }
@@ -101,7 +102,7 @@ public class BootStrapData implements CommandLineRunner {
         List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
         for(OutsourcedPart part:outsourcedParts){
             System.out.println(part.getName()+" "+part.getCompanyName());
-        }
+        } */
 
         // Sample products
         Product cheeseburger = new Product("Cheeseburger", 5.00, 25);
