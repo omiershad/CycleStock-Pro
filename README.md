@@ -27,8 +27,27 @@ E.  Add a sample inventory appropriate for your chosen store to the application.
 - BootStrapData.java, sample lines: deleted sample codes that were commented out
 
 F.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
+- mainscreen.html, line 86-88: added a Buy Now button next to update and delete buttons for products, 
+pre-mapped to controller, added hidden input field, and set up for POST request
+- BuyNowController - created BuyNowController which is related to buy now button
+- BuyNowController, line 18-21: added controller annotation and created public class with context private label
+- BuyNowController, line 30: added autowired annotation with public BuyNowController class. Added productRepository label.
+- BuyNowController, line 27-28: added handling POST request to buy product
+- BuyNowController, line 30: Using the ProductRepository to find a product by ID
+- BuyNowController, line 32-40: Check if product with given ID exists, if its greater than 0 then we will decrease by 1 and redirect to purchase successful page. 
+- BuyNowController, line 41-46: Otherwise we will redirect it to the purchaseError page if the inventory is not available or product is not found.
+- BuyNowController, line 50-51: created method to return to purchaseSuccess URL
+- BuyNowController, line 55-56: created method to return to purchaseError URL
+- purchaseSuccess.html - created html file for purchaseSuccess
+- purchaseError.html - created html file for purchaseError
+- purchaseSuccess.html, line 1-8: typical html lines with title, head, and doctype
+- purchaseError.html, line 1-8: typical html lines with title, head, and doctype
+- purchaseSuccess.html, line 10-11: created title and sentence for purchase success
+- purchaseError.html, line 10-11: created title and sentence for purchase error
+- purchaseSuccess.html, line 12-13: created link to go back to main screen
+- purchaseSuccess.html, line 12-13: created link to go back to main screen
 
-G. Modify the parts to track maximum and minimum inventory by doing the following:
+- G. Modify the parts to track maximum and minimum inventory by doing the following:
 
 H. Add validation for between or at the maximum and minimum fields. The validation must include the following:
 

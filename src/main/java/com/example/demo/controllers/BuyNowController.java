@@ -26,8 +26,6 @@ public class BuyNowController {
 
     @PostMapping("/buyProduct")
     public String buyProduct(@RequestParam("productId") Long productId) {
-        System.out.println("please work");
-        // ProductService productService = context.getBean(ProductServiceImpl.class);
 
         Optional<Product> optionalProduct = productRepository.findById(productId);
 
@@ -48,37 +46,6 @@ public class BuyNowController {
         }
     }
 
-    /* @PostMapping("/buyProduct")
-    public String buyProduct(@RequestParam("productId") Long productId) {
-        ProductService productService = context.getBean(ProductServiceImpl.class);
-
-        int productsAffected = productService.buy(productId);
-
-        if (productsAffected >= 0) {
-            return "redirect:/purchaseSuccess";
-        } else {
-            return "redirect:/purchaseError";
-        } */
-
-        /*
-        if (productService.isPresent()) {
-
-            Product product = productService.get();
-
-            if (product.getInv() > 0) {
-
-                product.setInv(product.getInv() - 1);
-
-                productRepository.save(product);
-
-                return "redirect:/purchaseSuccess";
-            } else {
-                return "redirect:/purchaseError";
-            }
-        } else {
-            return "redirect:/purchaseError";
-        } */
-
 
     @RequestMapping("/purchaseSuccess")
     public String displayPurchaseSuccess() {
@@ -89,10 +56,5 @@ public class BuyNowController {
     public String displayPurchaseError() {
         return "purchaseError";
     }
-
-
-
-
-
 
 }
