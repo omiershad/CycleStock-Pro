@@ -169,6 +169,7 @@ public class AddProductController {
         return "productForm";
     }
 
+    /*
     @PostMapping("/buyProduct")
     public String buyProduct(@RequestParam("productId") Long productId) {
         Optional<Product> optionalProduct = productRepository.findById(productId);
@@ -189,6 +190,6 @@ public class AddProductController {
         } else {
             return "redirect:/purchaseError";
         }
-    }
+    } */
 
 }
