@@ -74,3 +74,4 @@ I.  Add at least two unit tests for the maximum and minimum fields to the PartTe
 - PartTest.java, line 161-171: added test for minInv
 - PartTest.java, line 174-184: added test for maxInv
 J.  Remove the class files for any unused validators in order to clean your code.
+- DeletePartValidator: deleted class file as it was an unused validator.
