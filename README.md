@@ -48,7 +48,24 @@ pre-mapped to controller, added hidden input field, and set up for POST request
 - purchaseSuccess.html, line 12-13: created link to go back to main screen
 
 - G. Modify the parts to track maximum and minimum inventory by doing the following:
-
+- part.java, line 32-35: added minInv and maxInv fields with @Min annotation
+- part.java, line 50-51: added maxInv and minInv to public Part class
+- part.java, line 94-106: added maxInv and minInv getter and setter functions
+- BootStrapData.java, line 54-55,65-66,76-77,87-88,98-99: added max and min inventory values 
+for sample inventory parts
+- InhousePartForm.html, line 21-25: added text inputs for both max and min inventory
+- OutsourcedPartForm.html, line 21-25: added text inputs for both max and min inventory
+- application.properties, line 6: renamed database file name to match
+- part.java, line 122-124: created method that checks if inventory is valid, returns true if between max and min values.
+Otherwise returns false
+- AddInhousePartController, line 32-36: handles submission of form for adding in-house parts. if there are validation
+errors then it will return to "InhousePartForm" form.
+- AddInhousePartController, line 37-39: if method returns false then we will reject inv field with error message
+- AddInhousePartController, line 40-46: Otherwise we will save the part if validation is successful, update products and save part.
+- AddOutsourcedPartController, line 36-40: handles submission of form for adding in-house parts. if there are validation
+  errors then it will return to "OutsourcedPartForm" form.
+- AddOutsourcedPartController, line 41-43: if method returns false then we will reject inv field with error message
+- AddOutsourcedPartController, line 44-49: Otherwise we will save the part if validation is successful, update products and save part.
 H. Add validation for between or at the maximum and minimum fields. The validation must include the following:
 
 I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
