@@ -156,4 +156,31 @@ class PartTest {
         partOut.setId(1l);
         assertEquals(partIn.hashCode(),partOut.hashCode());
     }
+
+    // Test for minimum inventory
+    @Test
+    void testMinimumInventory() {
+        int minInv = 10; // Set a minimum inventory value
+        partIn.setMin(minInv); // Set the minimum inventory for partIn
+        partIn.setInv(minInv); // Set the inventory equal to the minimum
+        assertEquals(minInv, partIn.getInv()); // Ensure that inventory is set correctly
+
+        partOut.setMin(minInv); // Set the minimum inventory for partOut
+        partOut.setInv(minInv); // Set the inventory equal to the minimum
+        assertEquals(minInv, partOut.getInv()); // Ensure that inventory is set correctly
+    }
+
+    // Test for maximum inventory
+    @Test
+    void testMaximumInventory() {
+        int maxInv = 100; // Set a maximum inventory value
+        partIn.setMax(maxInv); // Set the maximum inventory for partIn
+        partIn.setInv(maxInv); // Set the inventory equal to the maximum
+        assertEquals(maxInv, partIn.getInv()); // Ensure that inventory is set correctly
+
+        partOut.setMax(maxInv); // Set the maximum inventory for partOut
+        partOut.setInv(maxInv); // Set the inventory equal to the maximum
+        assertEquals(maxInv, partOut.getInv()); // Ensure that inventory is set correctly
+    }
+
 }

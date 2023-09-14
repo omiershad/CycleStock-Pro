@@ -71,5 +71,6 @@ H. Add validation for between or at the maximum and minimum fields. The validati
 - EnufPartsValidator.java, line 35-62: made if statements that return false to check if any of parts for product would fall
 below their minimum if product was made. Updated error message as well.
 I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
-
+- PartTest.java, line 161-171: added test for minInv
+- PartTest.java, line 174-184: added test for maxInv
 J.  Remove the class files for any unused validators in order to clean your code.
