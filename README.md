@@ -67,7 +67,9 @@ errors then it will return to "InhousePartForm" form.
 - AddOutsourcedPartController, line 41-43: if method returns false then we will reject inv field with error message
 - AddOutsourcedPartController, line 44-49: Otherwise we will save the part if validation is successful, update products and save part.
 H. Add validation for between or at the maximum and minimum fields. The validation must include the following:
-
+- part.java, line 122: already added from previous section. Have a validation check for if inventory is below minimum or above maximum.
+- EnufPartsValidator.java, line 35-62: made if statements that return false to check if any of parts for product would fall
+below their minimum if product was made. Updated error message as well.
 I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
 
 J.  Remove the class files for any unused validators in order to clean your code.
