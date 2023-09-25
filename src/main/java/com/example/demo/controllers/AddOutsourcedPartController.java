@@ -38,7 +38,7 @@ public class AddOutsourcedPartController {
         theModel.addAttribute("outsourcedpart", part);
         if (bindingResult.hasErrors()) {
             return "OutsourcedPartForm";
-        } else if (!part.isInvValid()) {
+        } else if (!part.isValid()) {
             bindingResult.rejectValue("inv", "InvalidInventory", "Inventory is outside the valid range.");
             return "OutsourcedPartForm";
         } else {

@@ -34,7 +34,7 @@ public class AddInhousePartController {
         theModel.addAttribute("inhousepart", part);
         if (theBindingResult.hasErrors()) {
             return "InhousePartForm";
-        } else if (!part.isInvValid()) {
+        } else if (!part.isValid()) {
             theBindingResult.rejectValue("inv", "InvalidInventory", "Inventory is outside the valid range.");
             return "InhousePartForm";
         } else {

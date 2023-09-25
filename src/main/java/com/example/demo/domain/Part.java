@@ -119,7 +119,7 @@ public abstract class Part implements Serializable {
         return this.name;
     }
 
-    public boolean isInvValid() {
+    public boolean isValid() {
         return inv >= minInv && inv <= maxInv;
     }
 
